@@ -31,7 +31,8 @@ public class NoWind : MonoBehaviour {
 			// Set on interruptor of target sensor
 			if (this.anotherWall) {
 				this.anotherWall.SetActive(true);
-				(this.anotherWall.transform.GetChild(0).GetComponent("NoWind") as NoWind).interruptorOn= true;
+				if (this.anotherWall.transform.childCount>0)
+					(this.anotherWall.transform.GetChild(0).GetComponent("NoWind") as NoWind).interruptorOn= true;
 			}
 		}
 	}
