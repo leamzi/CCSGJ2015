@@ -35,7 +35,7 @@ public class PlayerShooting : MonoBehaviour {
 		timer += Time.deltaTime;
 		
 		// If the Fire1 button is being press and it's time to fire...
-		if(Input.GetButton ("btn_x_02") && timer >= timeBetweenBullets)
+		if(timer >= timeBetweenBullets)
 		{
 			// ... shoot the gun.
 			Shoot ();
@@ -58,6 +58,11 @@ public class PlayerShooting : MonoBehaviour {
 	
 	void Shoot ()
 	{
+		float h = Input.GetAxisRaw ("Horizontal_02");
+		float v = Input.GetAxisRaw ("Vertical_02");
+
+		if (h == 0 && v == 0) return;
+
 		// Reset the timer.
 		timer = 0f;
 		
@@ -77,7 +82,20 @@ public class PlayerShooting : MonoBehaviour {
 		
 		// Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
 		shootRay.origin = transform.position;
-		shootRay.direction = transform.forward;
+
+		if( h >0)
+		{
+			shootRay.direction = transform.right;
+		} else if ( h < 0 ){
+			shootRay.direction = -transform.right;
+		} else if ( v > 0 ){
+			shootRay.direction = transform.forward;
+		} else if ( v < 0 ){
+			shootRay.direction = -transform.forward;
+		}
+
+//		if( h == 0 && v == 0) shootRay.direction = transform.forward;
+//		shootRay.direction = transform.forward;
 		
 		// Perform the raycast against gameobjects on the shootable layer and if it hits something...
 		if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
