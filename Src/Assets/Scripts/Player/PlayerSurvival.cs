@@ -4,7 +4,8 @@ using System.Collections;
 public class PlayerSurvival : MonoBehaviour {
 
 	public float speed = 6f;
-	
+
+	public CharacterController control;
 	Vector3 movement;
 //	Animator anim;
 	Rigidbody playerRigidbody;
@@ -14,6 +15,7 @@ public class PlayerSurvival : MonoBehaviour {
 	{
 //		floorMask = LayerMask.GetMask ("Floor");
 //		anim = GetComponent<Animator> ();
+		control= this.GetComponent("CharacterController") as CharacterController;
 		playerRigidbody = GetComponent<Rigidbody> ();
 	}
 	
@@ -32,7 +34,8 @@ public class PlayerSurvival : MonoBehaviour {
 		movement.Set (h, 0f, v);
 		movement = movement.normalized * speed * Time.deltaTime;
 		
-		playerRigidbody.MovePosition (transform.position + movement);
+		//playerRigidbody.MovePosition (transform.position + movement);
+		control.Move(movement);
 	}
 	
 	void Turning()
