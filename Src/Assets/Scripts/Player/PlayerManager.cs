@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
 	private Vector3 localMoveDirection;
 	private Vector3 moveDirection;
 	private float 	speed= 10;
+	private bool 	windInmune;
 
 	void Awake()
 	{
@@ -33,22 +34,21 @@ public class PlayerManager : MonoBehaviour
 		control.Move(speed * moveDirection * Time.deltaTime);
 	}
 
-	/*
 	void OnEnable()
 	{
-		Messenger<Vector3>.AddListener("Wind", HandleArenaTouch);
+		Messenger<Vector3>.AddListener("Wind", ApplyWind);
 	}
 	
 	void OnDisable()
 	{
-		Messenger<Vector3>.RemoveListener("Wind", HandleArenaTouch);
+		Messenger<Vector3>.RemoveListener("Wind", ApplyWind);
 	}
 
-	void ApplyWind(Vector3 newTarget)
+	void ApplyWind(Vector3 windDirection)
 	{
-		Debug.Log ("Wind blowing = " + newTarget);
-
+		if (windInmune) return;
+		Debug.Log ("Wind blowing = " + windDirection  * Time.deltaTime);
+		control.Move(windDirection);
 	}
-*/
 
 }
