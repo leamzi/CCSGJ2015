@@ -32,7 +32,8 @@ public class NoWind : MonoBehaviour {
 			if (this.anotherWall) {
 				this.anotherWall.SetActive(true);
 				if (this.anotherWall.transform.childCount>0)
-					(this.anotherWall.transform.GetChild(0).GetComponent("NoWind") as NoWind).interruptorOn= true;
+					if (this.anotherWall.transform.GetChild(0).GetComponent("NoWind")) 
+						(this.anotherWall.transform.GetChild(0).GetComponent("NoWind") as NoWind).interruptorOn= true;
 			}
 		}
 	}
