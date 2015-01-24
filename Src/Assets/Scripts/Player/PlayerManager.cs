@@ -53,13 +53,13 @@ public class PlayerManager : MonoBehaviour
 	void OnTriggerStay(Collider other)
 	{
 		print("Player was Hit");
-		this.windInmune=  true;
+		if (other.collider.tag== "NoWind") this.windInmune=  true;
 	}
 
 	void OnTriggerExit(Collider other)
 	{
 		print("Player was Hit");
-		this.windInmune=  false;
+		if (other.collider.tag== "NoWind") this.windInmune=  false;
 	}
 
 }
