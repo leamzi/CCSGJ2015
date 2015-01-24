@@ -33,5 +33,22 @@ public class PlayerManager : MonoBehaviour
 		control.Move(speed * moveDirection * Time.deltaTime);
 	}
 
+	/*
+	void OnEnable()
+	{
+		Messenger<Vector3>.AddListener("Wind", HandleArenaTouch);
+	}
+	
+	void OnDisable()
+	{
+		Messenger<Vector3>.RemoveListener("Wind", HandleArenaTouch);
+	}
+
+	void ApplyWind(Vector3 newTarget)
+	{
+		Debug.Log ("Wind blowing = " + newTarget);
+
+	}
+*/
 
 }
