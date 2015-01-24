@@ -12,4 +12,9 @@ public class NoWind : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		print("Trigger was Hit");
+	}
 }
