@@ -62,4 +62,14 @@ public class PlayerManager : MonoBehaviour
 		if (other.collider.tag== "NoWind") this.windInmune=  false;
 	}
 
+	public void kill() {
+		print("Dead");
+
+		if (this.playerNumber== "_01")
+			Messenger<Vector3>.Broadcast("GOAT DIED", this.transform.position);
+
+		if (this.playerNumber== "_02")
+			Messenger<Vector3>.Broadcast("HUMAN DIED", this.transform.position);
+	}
+
 }

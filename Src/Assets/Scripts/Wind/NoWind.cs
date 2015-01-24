@@ -46,7 +46,8 @@ public class NoWind : MonoBehaviour {
 				this.targets.Remove (other.gameObject);
 				if (targets.Count==0) {
 					// Set off interruptor of target sensor
-					(this.anotherWall.transform.GetChild(0).GetComponent("NoWind") as NoWind).interruptorOn= false;
+					if (this.anotherWall.transform.GetChild(0).GetComponent("NoWind")) 
+						(this.anotherWall.transform.GetChild(0).GetComponent("NoWind") as NoWind).interruptorOn= false;
 				}
 			}
 		}

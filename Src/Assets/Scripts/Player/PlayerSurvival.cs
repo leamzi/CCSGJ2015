@@ -37,6 +37,10 @@ public class PlayerSurvival : MonoBehaviour {
 		//playerRigidbody.MovePosition (transform.position + movement);
 		control.Move(movement);
 	}
+
+	public void kill() {
+		print("Dead");
+	}
 	
 	void Turning()
 	{
