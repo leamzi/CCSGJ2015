@@ -3,6 +3,8 @@ using System.Collections;
 
 public class NoWind : MonoBehaviour {
 
+	public GameObject anotherWall;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -12,9 +14,20 @@ public class NoWind : MonoBehaviour {
 	void Update () {
 	
 	}
-
-	void OnTriggerEnter(Collider other)
+	
+	void OnTriggerStay(Collider other)
 	{
-		print("Trigger was Hit");
+		if (other.collider.tag== "Player") {
+			print("Turn wall on");
+			if (this.anotherWall) this.anotherWall.SetActive(true);
+		}
+	}
+	
+	void OnTriggerExit(Collider other)
+	{
+		if (other.collider.tag== "Player") {
+			print("Turn wall off");
+			if (this.anotherWall) this.anotherWall.SetActive(false);
+		}
 	}
 }
