@@ -25,8 +25,9 @@ public class PlayerManager : MonoBehaviour
 	/*CHECKS FOR MOVEMET*/
 	private void movement()
 	{
+		// este es el que vamos a usar:
 		localMoveDirection= new Vector3(Input.GetAxis("Horizontal" + playerNumber), 0, Input.GetAxis("Vertical"+ playerNumber));
-		
+
 		moveDirection= this.transform.TransformDirection(localMoveDirection);
 		
 		control.Move(speed * moveDirection * Time.deltaTime);
