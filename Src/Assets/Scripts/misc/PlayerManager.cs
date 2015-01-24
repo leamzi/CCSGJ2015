@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
 
 	/*MOVEMENT*/
 	public CharacterController control;
+	public string playerNumber = "_01";
 	private Vector3 localMoveDirection;
 	private Vector3 moveDirection;
 	private float 	speed= 10;
@@ -24,7 +25,7 @@ public class PlayerManager : MonoBehaviour
 	/*CHECKS FOR MOVEMET*/
 	private void movement()
 	{
-		localMoveDirection= new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+		localMoveDirection= new Vector3(Input.GetAxis("Horizontal" + playerNumber), 0, Input.GetAxis("Vertical"+ playerNumber));
 		
 		moveDirection= this.transform.TransformDirection(localMoveDirection);
 		
