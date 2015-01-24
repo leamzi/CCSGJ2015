@@ -50,7 +50,7 @@ public class EnemyHealth : MonoBehaviour {
 		
 		// Play the hurt sound effect.
 		//enemyAudio.Play ();
-		
+		Debug.Log ("DANIO RECIBIDO: " + amount);
 		// Reduce the current health by the amount of damage sustained.
 		currentHealth -= amount;
 		
