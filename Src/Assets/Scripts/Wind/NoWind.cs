@@ -16,17 +16,23 @@ public class NoWind : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (targets.Count==0 && !interruptorOn && !neverRemove) 	this.transform.parent.gameObject.SetActive(false);
-		else 													this.transform.parent.gameObject.SetActive(true);
+		if (neverRemove) return;
+
+		if (!interruptorOn && this.targets.Count==0) 	this.transform.parent.gameObject.SetActive(false);
+
 	}
 	
-	void OnTriggerStay(Collider other)
+	void OnTriggerEnter(Collider other)
 	{
+		// Add the player to our current present player count
 		if (other.collider.tag== "Player") {
-			print("Turn wall on");
 			if (!this.targets.Contains (other.gameObject)) 
 				this.targets.Add(other.gameObject);
-			if (this.anotherWall) (this.anotherWall.transform.GetChild(0).GetComponent("NoWind") as NoWind).interruptorOn= true;
+			// Set on interruptor of target sensor
+			if (this.anotherWall) {
+				this.anotherWall.SetActive(true);
+				(this.anotherWall.transform.GetChild(0).GetComponent("NoWind") as NoWind).interruptorOn= true;
+			}
 		}
 	}
 	
@@ -34,9 +40,11 @@ public class NoWind : MonoBehaviour {
 	{
 		if (other.collider.tag== "Player") {
 			if (this.targets.Contains (other.gameObject)) { 
+				// Remove the player from our current present player count
 				this.targets.Remove (other.gameObject);
 				if (targets.Count==0) {
-					(this.anotherWall.GetComponent("NoWind") as NoWind).interruptorOn= false;
+					// Set off interruptor of target sensor
+					(this.anotherWall.transform.GetChild(0).GetComponent("NoWind") as NoWind).interruptorOn= false;
 				}
 			}
 		}
