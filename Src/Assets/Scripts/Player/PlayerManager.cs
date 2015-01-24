@@ -47,8 +47,19 @@ public class PlayerManager : MonoBehaviour
 	void ApplyWind(Vector3 windDirection)
 	{
 		if (windInmune) return;
-		Debug.Log ("Wind blowing = " + windDirection  * Time.deltaTime);
 		control.Move(windDirection);
+	}
+
+	void OnTriggerStay(Collider other)
+	{
+		print("Player was Hit");
+		this.windInmune=  true;
+	}
+
+	void OnTriggerExit(Collider other)
+	{
+		print("Player was Hit");
+		this.windInmune=  false;
 	}
 
 }
