@@ -4,6 +4,9 @@ using System.Collections;
 public class ChivoController : MonoBehaviour {
 
 	public Animator anim;
+	public AudioSource source;
+	public AudioClip step;
+	public AudioClip death;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +42,15 @@ public class ChivoController : MonoBehaviour {
 		if(this.anim) this.anim.SetBool("walk",moving);
 	}
 
+	public void stepSound() {
+		this.source.clip= this.step;
+		this.source.Play();
+	}
+
+	public void deathSound() {
+		this.source.clip= this.death;
+		this.source.Play();
+	}
 
 	public void setDirection(Vector3 direction) {
 		if (direction.x==  1) this.goRight();

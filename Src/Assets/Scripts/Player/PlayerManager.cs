@@ -118,4 +118,8 @@ public class PlayerManager : MonoBehaviour
 		;
 	}
 
+	void deadSound() {
+		;
+	}
+
 }
