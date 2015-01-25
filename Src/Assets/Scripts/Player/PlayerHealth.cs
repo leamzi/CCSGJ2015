@@ -85,7 +85,7 @@ public class PlayerHealth : MonoBehaviour {
 //		playerAudio.Play ();
 		
 		// Turn off the movement and shooting scripts.
-		playerMovement.enabled = false;
+		playerMovement.kill(); //playerMovement.enabled = false;
 		playerShooting.enabled = false;
 
 
