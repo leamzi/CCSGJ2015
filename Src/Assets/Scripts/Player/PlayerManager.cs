@@ -55,7 +55,7 @@ public class PlayerManager : MonoBehaviour
 			this.chivo.setDirection(localMoveDirection);
 		}
 		if (this.human) {
-			this.human.walk((this.localMoveDirection== Vector3.zero));
+			this.human.walk((this.localMoveDirection!= Vector3.zero));
 			this.human.setDirection(localMoveDirection);
 		}
 
@@ -115,6 +115,10 @@ public class PlayerManager : MonoBehaviour
 	}
 
 	void stepSound() {
+		;
+	}
+
+	void deadSound() {
 		;
 	}
 
