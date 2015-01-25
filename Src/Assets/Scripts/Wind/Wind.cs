@@ -7,6 +7,7 @@ public class Wind : MonoBehaviour {
 	public bool wind= true;
 	public float windDuration= 3;
 	public GameObject windVFX;
+	public AudioSource source;
 
 	// Use this for initialization
 	void Start () {
@@ -21,10 +22,12 @@ public class Wind : MonoBehaviour {
 	}
 
 	void WindOn() {
+		this.source.Play();
 		this.wind= true;
 	}
 
 	void WindOff() {
+		this.source.Stop();
 		this.wind= false;
 	}
 
