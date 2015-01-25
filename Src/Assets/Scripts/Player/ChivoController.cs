@@ -14,7 +14,11 @@ public class ChivoController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		setPikachu();
+		string key= PlayerPrefs.GetString("Skin_name");
+
+		if 		(key== "Skin_ChivoYRobin") 	setSkinIndex(2);
+		else if (key== "Skin_Chivochu") 	setSkinIndex(1);
+		else if (key== "Skin_normal") 		setSkinIndex(0);
 	}
 	
 	// Update is called once per frame
@@ -65,5 +69,9 @@ public class ChivoController : MonoBehaviour {
 
 	public void setPikachu() {
 		this.render.sharedMaterial = this.ownMaterials[1];
+	}
+
+	public void setSkinIndex(int i) {
+		this.render.sharedMaterial = this.ownMaterials[i];
 	}
 }

@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 0f09dc54f34a3f645b54b61682f19e10
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: chiBorris
+    100002: goat_Bag_L
+    100004: goat_Bag_L_end
+    100006: goat_Bag_R
+    100008: goat_Bag_R_end
+    100010: goat_beard
+    100012: goat_Body
+    100014: goat_Boot_BL
+    100016: goat_Boot_BL_end
+    100018: goat_Boot_BR
+    100020: goat_Boot_BR_end
+    100022: goat_Ear_L
+    100024: goat_Ear_L_end
+    100026: goat_Ear_R
+    100028: goat_Ear_R_end
+    100030: goat_Foot_FL
+    100032: goat_Foot_FL_end
+    100034: goat_Foot_FR
+    100036: goat_Foot_FR_end
+    100038: goat_Head
+    100040: goat_hips
+    100042: goat_Reference
+    100044: goat_tail
+    100046: goat_tail_end
+    100048: hero_hips
+    100050: hero_hips_mesh
+    100052: hero_LeftLeg
+    100054: hero_RightLeg
+    100056: //RootNode
+    100058: joint10
+    100060: joint12
+    100062: joint12 1
+    100064: mountPoint
+    400000: chiBorris
+    400002: goat_Bag_L
+    400004: goat_Bag_L_end
+    400006: goat_Bag_R
+    400008: goat_Bag_R_end
+    400010: goat_beard
+    400012: goat_Body
+    400014: goat_Boot_BL
+    400016: goat_Boot_BL_end
+    400018: goat_Boot_BR
+    400020: goat_Boot_BR_end
+    400022: goat_Ear_L
+    400024: goat_Ear_L_end
+    400026: goat_Ear_R
+    400028: goat_Ear_R_end
+    400030: goat_Foot_FL
+    400032: goat_Foot_FL_end
+    400034: goat_Foot_FR
+    400036: goat_Foot_FR_end
+    400038: goat_Head
+    400040: goat_hips
+    400042: goat_Reference
+    400044: goat_tail
+    400046: goat_tail_end
+    400048: hero_hips
+    400050: hero_hips_mesh
+    400052: hero_LeftLeg
+    400054: hero_RightLeg
+    400056: //RootNode
+    400058: joint10
+    400060: joint12
+    400062: joint12 1
+    400064: mountPoint
+    4300000: chiBorris
+    4300002: hero_hips_mesh
+    7400000: idle
+    9500000: //RootNode
+    13700000: chiBorris
+    13700002: hero_hips_mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: chiBorris
+        weight: 1
+      - path: goat_Reference
+        weight: 1
+      - path: goat_Reference/goat_hips
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_Bag_L
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_Bag_L/goat_Bag_L_end
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_Bag_R
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_Bag_R/goat_Bag_R_end
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_Head
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_Head/goat_beard
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_Head/goat_beard/joint10
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_Head/goat_Ear_L
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_Head/goat_Ear_L/goat_Ear_L_end
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_Head/goat_Ear_R
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_Head/goat_Ear_R/goat_Ear_R_end
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_tail
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/goat_tail/goat_tail_end
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/hero_hips
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/hero_hips/hero_LeftLeg
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/hero_hips/hero_LeftLeg/joint12
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/hero_hips/hero_RightLeg
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/hero_hips/hero_RightLeg/joint12 1
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Body/hero_hips/mountPoint
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Boot_BL
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Boot_BL/goat_Boot_BL_end
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Boot_BR
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Boot_BR/goat_Boot_BR_end
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Foot_FL
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Foot_FL/goat_Foot_FL_end
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Foot_FR
+        weight: 1
+      - path: goat_Reference/goat_hips/goat_Foot_FR/goat_Foot_FR_end
+        weight: 1
+      - path: hero_hips_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: c3cdef7bcd3a55347af0d3f1db4302e2,
+    type: 3}
+  animationType: 2
+  additionalBone: 0
+  userData: 
