@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour {
 	
 	
 	Animator anim;                              // Reference to the animator.
+	EnemiesKilled totalEnemies;
 //	AudioSource enemyAudio;                     // Reference to the audio source.
 	ParticleSystem hitParticles;                // Reference to the particle system that plays when the enemy is damaged.
 	CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
@@ -25,6 +26,8 @@ public class EnemyHealth : MonoBehaviour {
 		//enemyAudio = GetComponent <AudioSource> ();
 		hitParticles = GetComponentInChildren <ParticleSystem> ();
 		capsuleCollider = GetComponent <CapsuleCollider> ();
+
+
 		
 		// Setting the current health when the enemy first spawns.
 		currentHealth = startingHealth;
@@ -50,7 +53,7 @@ public class EnemyHealth : MonoBehaviour {
 		
 		// Play the hurt sound effect.
 		//enemyAudio.Play ();
-		Debug.Log ("DANIO RECIBIDO: " + amount);
+//		Debug.Log ("DANIO RECIBIDO: " + amount);
 		// Reduce the current health by the amount of damage sustained.
 		currentHealth -= amount;
 		
@@ -104,5 +107,7 @@ public class EnemyHealth : MonoBehaviour {
 		
 		// After 2 seconds destory the enemy.
 		Destroy (gameObject, 2f);
+		Messenger<int>.Broadcast("EnemyKilled", 1);
+
 	}
 }
