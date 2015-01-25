@@ -114,4 +114,8 @@ public class PlayerManager : MonoBehaviour
 		Application.LoadLevel(Application.loadedLevel);
 	}
 
+	void stepSound() {
+		;
+	}
+
 }
