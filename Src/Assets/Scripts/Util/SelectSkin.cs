@@ -8,9 +8,17 @@ public class SelectSkin : MonoBehaviour {
 	public string Selected_Skin = "Normal";
 	public Image currentImage;
 	public List<Sprite> skinsSprites;
+	public List<AudioClip> soundClip;                 // The sound to play when the enemy dies
+
+	AudioSource skinAudio;                     // Reference to the audio source.
 
 	bool canChange = true;
 	int i = 0;
+
+	void Awake ()
+	{
+		skinAudio = GetComponent <AudioSource> ();
+	}
 
 	void Update()
 	{
@@ -47,11 +55,19 @@ public class SelectSkin : MonoBehaviour {
 				Selected_Skin = "Skin_Chivochu";
 				PlayerPrefs.SetString("Skin_name", Selected_Skin);
 				Debug.Log("Skin es: "+Selected_Skin);
+				
+				skinAudio.Stop();
+				skinAudio.clip = soundClip[0];
+				skinAudio.Play ();
 				break;
 			case 2:
 				Selected_Skin = "Skin_ChivoYRobin";
 				PlayerPrefs.SetString("Skin_name", Selected_Skin);
 				Debug.Log("Skin es: "+Selected_Skin);
+				
+				skinAudio.Stop();
+				skinAudio.clip = soundClip[1];
+				skinAudio.Play ();
 				break;
 			case 3:
 				Selected_Skin = "Skin_Chivochu";
