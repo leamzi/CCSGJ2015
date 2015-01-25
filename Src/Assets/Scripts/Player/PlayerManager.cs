@@ -13,6 +13,9 @@ public class PlayerManager : MonoBehaviour
 	private float 	speed= 10;
 	public  bool 	windInmune;
 
+	public ChivoController chivo;
+	public HumanController human;
+
 	void Awake()
 	{
 		control= this.GetComponent("CharacterController") as CharacterController;
@@ -28,6 +31,15 @@ public class PlayerManager : MonoBehaviour
 	{
 		// este es el que vamos a usar:
 		localMoveDirection= new Vector3(Input.GetAxis("Horizontal" + playerNumber), 0, Input.GetAxis("Vertical"+ playerNumber));
+
+		if (this.chivo) {
+			this.chivo.walk((this.localMoveDirection== Vector3.zero));
+			this.chivo.setDirection(localMoveDirection);
+		}
+		if (this.human) {
+			this.human.setDirection(localMoveDirection);
+		}
+
 
 		moveDirection= this.transform.TransformDirection(localMoveDirection);
 		
@@ -65,11 +77,15 @@ public class PlayerManager : MonoBehaviour
 	public void kill() {
 		print("Dead");
 
+		if (this.chivo) this.chivo.die();
+		if (this.human) this.human.die();
+		/*
 		if (this.playerNumber== "_01")
 			Messenger<Vector3>.Broadcast("GOAT DIED", this.transform.position);
 
 		if (this.playerNumber== "_02")
 			Messenger<Vector3>.Broadcast("HUMAN DIED", this.transform.position);
+			*/
 	}
 
 }
