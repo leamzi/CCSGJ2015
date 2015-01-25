@@ -72,6 +72,6 @@ public class ChivoController : MonoBehaviour {
 	}
 
 	public void setSkinIndex(int i) {
-		this.render.sharedMaterial = this.ownMaterials[0];
+		this.render.sharedMaterial = this.ownMaterials[i];
 	}
 }
