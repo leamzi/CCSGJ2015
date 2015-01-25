@@ -7,7 +7,8 @@ public class EnemyManager : MonoBehaviour {
 	public GameObject enemy;                // The enemy prefab to be spawned.
 	public float spawnTime = 3f;            // How long between each spawn.
 	public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
-	
+
+	public bool levelCompleted = false;
 	
 	void Start ()
 	{
@@ -19,7 +20,7 @@ public class EnemyManager : MonoBehaviour {
 	void Spawn ()
 	{
 		// If the player has no health left...
-		if(playerHealth.currentHealth <= 0f)
+		if(playerHealth.currentHealth <= 0f || levelCompleted)
 		{
 			// ... exit the function.
 			return;
@@ -31,4 +32,20 @@ public class EnemyManager : MonoBehaviour {
 		// Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
 		Instantiate (enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
 	}
+
+	void OnEnable()
+	{
+		Messenger<int>.AddListener("levelCompleted", changeLevelCompleted);
+	}
+	
+	void OnDisable()
+	{
+		Messenger<int>.RemoveListener("levelCompleted", changeLevelCompleted);
+	}
+
+	void changeLevelCompleted(int levelCompleted1)
+	{
+		levelCompleted = true;
+	}
+
 }

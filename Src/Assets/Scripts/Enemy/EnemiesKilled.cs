@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemiesKilled : MonoBehaviour {
 	public int totalLevelEnemies;
 	public GameObject levelDoor;
+	public GameObject enemyManager;
 
 	public static int enemiesKilled;
 
@@ -12,7 +13,8 @@ public class EnemiesKilled : MonoBehaviour {
 	void Awake()
 	{
 //		enemiesKilled = 0;
-		levelDoor = GameObject.FindGameObjectWithTag ("Door");
+		levelDoor = GameObject.FindGameObjectWithTag ("Door") as GameObject;
+		enemyManager = GameObject.FindGameObjectWithTag ("EnemyManager") as GameObject;
 	}
 
 	void OnEnable()
@@ -25,17 +27,20 @@ public class EnemiesKilled : MonoBehaviour {
 		Messenger<int>.RemoveListener("enemyKilled", SumEnemy);
 	}
 	
-	void SumEnemy(int windDirection)
+	void SumEnemy(int SumEnemy)
 	{
-
+		enemiesKilled += SumEnemy;
 	}
 
 	void Update()
 	{
 		Debug.Log ("Enemies Killed: "+ enemiesKilled);
-		if (enemiesKilled >= totalLevelEnemies) 
+		if (enemiesKilled >= totalLevelEnemies ) 
 		{
-			levelDoor.SetActive(true);
+
+			levelDoor.transform.position = new Vector3(46.82f, 1.92f, 12.9f);
+			Debug.Log("Puerta Sale: "+levelDoor.transform.position.z);
+			Messenger<int>.Broadcast("levelCompleted", 0);
 		}
 	}
 }
