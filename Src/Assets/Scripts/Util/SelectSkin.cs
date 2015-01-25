@@ -18,6 +18,10 @@ public class SelectSkin : MonoBehaviour {
 	void Awake ()
 	{
 		skinAudio = GetComponent <AudioSource> ();
+
+		skinAudio.Stop();
+		skinAudio.clip = soundClip[0];
+		skinAudio.Play ();
 	}
 
 	void Update()
