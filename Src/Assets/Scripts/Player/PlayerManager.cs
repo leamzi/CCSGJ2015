@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
 	private Vector3 moveDirection;
 	private float 	speed= 10;
 	public  bool 	windInmune;
+	public  bool 	dead;
 
 	public ChivoController chivo;
 	public HumanController human;
@@ -43,8 +44,11 @@ public class PlayerManager : MonoBehaviour
 	/*CHECKS FOR MOVEMET*/
 	private void movement()
 	{
+
 		// este es el que vamos a usar:
 		localMoveDirection= new Vector3(Input.GetAxis("Horizontal" + playerNumber), 0, Input.GetAxis("Vertical"+ playerNumber));
+
+		if (this.dead) localMoveDirection= Vector3.zero;
 
 		if (this.chivo) {
 			this.chivo.walk((this.localMoveDirection!= Vector3.zero));
@@ -91,7 +95,9 @@ public class PlayerManager : MonoBehaviour
 
 	public void kill() {
 		print("Dead");
-
+		if (this.dead) return;
+		this.dead= true;
+		Invoke("RestartScene",2);
 		if (this.chivo) this.chivo.die();
 		if (this.human) this.human.die();
 		/*
@@ -101,6 +107,11 @@ public class PlayerManager : MonoBehaviour
 		if (this.playerNumber== "_02")
 			Messenger<Vector3>.Broadcast("HUMAN DIED", this.transform.position);
 			*/
+	}
+
+	void RestartScene() {
+		
+		Application.LoadLevel(Application.loadedLevel);
 	}
 
 }

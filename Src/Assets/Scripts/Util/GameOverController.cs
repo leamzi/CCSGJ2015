@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TestLog : MonoBehaviour {
-
-	public UILabel text;
+public class GameOverController : MonoBehaviour {
+	
 
 	// Use this for initialization
 	void Start () {
@@ -28,11 +27,11 @@ public class TestLog : MonoBehaviour {
 	}
 
 	void goatDied(Vector3 target) {
-		if (this.text) this.text.text= "GOAT DIED";
+		Debug.Log("GOAT DIED");
 	}
 
 	void humanDied(Vector3 target) {
-		if (this.text) this.text.text= "HUMAN DIED";
+		Debug.Log("HUMAN DIED");
 	}
 
 }

@@ -17,13 +17,18 @@ public class HarmPlayer : MonoBehaviour {
 	{
 		// Add the player to our current present player count
 		if (other.collider.tag== "Player") {
-			if (other.collider.gameObject.GetComponent("PlayerManager"))
+			if (other.collider.gameObject.GetComponent("PlayerManager")) {
+
 				(other.collider.gameObject.GetComponent("PlayerManager") as PlayerManager).kill();
+			}
+			if (other.collider.gameObject.GetComponent("PlayerSurvival")) {
 
-			if (other.collider.gameObject.GetComponent("PlayerSurvival"))
 				(other.collider.gameObject.GetComponent("PlayerSurvival") as PlayerManager).kill();
+			}
 
-			Destroy(other.collider.gameObject);
+			//Destroy(other.collider.gameObject);
 		}
 	}
+
+
 }
