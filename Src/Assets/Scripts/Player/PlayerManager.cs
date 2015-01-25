@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour
 	private Vector3 localMoveDirection;
 	private Vector3 moveDirection;
 	private float 	speed= 10;
-	private bool 	windInmune;
+	public  bool 	windInmune;
 
 	void Awake()
 	{
