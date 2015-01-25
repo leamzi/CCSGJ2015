@@ -12,6 +12,7 @@ public class PlayerSurvival : MonoBehaviour {
 //	Animator anim;
 	Rigidbody playerRigidbody;
 //	int floorMask;
+
 	
 	void Awake()
 	{
