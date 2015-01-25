@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ChivoController : MonoBehaviour {
 
@@ -8,9 +9,12 @@ public class ChivoController : MonoBehaviour {
 	public AudioClip step;
 	public AudioClip death;
 
+	public Renderer render;
+	public List<Material> ownMaterials;
+
 	// Use this for initialization
 	void Start () {
-		;
+		setPikachu();
 	}
 	
 	// Update is called once per frame
@@ -57,5 +61,9 @@ public class ChivoController : MonoBehaviour {
 		if (direction.x== -1) this.goLeft();
 		if (direction.z==  1) this.goUp();
 		if (direction.z== -1) this.goDown();
+	}
+
+	public void setPikachu() {
+		this.render.sharedMaterial = this.ownMaterials[1];
 	}
 }
