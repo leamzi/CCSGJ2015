@@ -8,9 +8,9 @@ public class EnemyHealth : MonoBehaviour {
 	public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
 	public int scoreValue = 10;                 // The amount added to the player's score when the enemy dies.
 	public AudioClip deathClip;                 // The sound to play when the enemy dies.
+
 	
-	
-	Animator anim;                              // Reference to the animator.
+	public Animator anim;                              // Reference to the animator.
 	EnemiesKilled totalEnemies;
 //	AudioSource enemyAudio;                     // Reference to the audio source.
 	ParticleSystem hitParticles;                // Reference to the particle system that plays when the enemy is damaged.
@@ -22,7 +22,7 @@ public class EnemyHealth : MonoBehaviour {
 	void Awake ()
 	{
 		// Setting up the references.
-		anim = GetComponent <Animator> ();
+//		anim = GetComponent <Animator> ();
 		//enemyAudio = GetComponent <AudioSource> ();
 		hitParticles = GetComponentInChildren <ParticleSystem> ();
 		capsuleCollider = GetComponent <CapsuleCollider> ();
@@ -74,6 +74,7 @@ public class EnemyHealth : MonoBehaviour {
 	
 	void Death ()
 	{
+
 		// The enemy is dead.
 		isDead = true;
 		
