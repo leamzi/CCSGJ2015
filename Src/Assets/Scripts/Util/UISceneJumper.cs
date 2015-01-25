@@ -32,7 +32,7 @@ public class UISceneJumper : MonoBehaviour {
 			if(Input.GetButtonDown("btn_a_01") || Input.GetButtonDown("btn_a_02")) GoControllers();
 		} else if (this.controllerScene)
 		{
-			if(Input.GetButtonDown("btn_a_01") || Input.GetButtonDown("btn_a_02")) Application.LoadLevel("Scene_Wind");
+			if(Input.GetButtonDown("btn_a_01") || Input.GetButtonDown("btn_a_02")) GoStart();
 		}
 		else
 		{
