@@ -10,7 +10,7 @@ public class UISceneJumper : MonoBehaviour {
 	}
 
 	public void GoStart(){
-		Application.LoadLevel("Scene_Wind");
+		Application.LoadLevel("Scene_SkinSelector");
 	}
 
 	public void GoControls(){
