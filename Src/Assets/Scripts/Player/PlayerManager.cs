@@ -16,6 +16,8 @@ public class PlayerManager : MonoBehaviour
 	public ChivoController chivo;
 	public HumanController human;
 
+	private Vector3 lastPosition;
+
 	void Awake()
 	{
 		control= this.GetComponent("CharacterController") as CharacterController;
@@ -25,6 +27,18 @@ public class PlayerManager : MonoBehaviour
 	{
 		movement();
 	}
+
+	bool moving ()
+	{
+		if (lastPosition != gameObject.transform.position)
+		{
+			lastPosition = gameObject.transform.position;
+			return true;
+		}
+		lastPosition = gameObject.transform.position;
+		return false;
+
+	}
 	
 	/*CHECKS FOR MOVEMET*/
 	private void movement()
@@ -33,10 +47,11 @@ public class PlayerManager : MonoBehaviour
 		localMoveDirection= new Vector3(Input.GetAxis("Horizontal" + playerNumber), 0, Input.GetAxis("Vertical"+ playerNumber));
 
 		if (this.chivo) {
-			this.chivo.walk((this.localMoveDirection== Vector3.zero));
+			this.chivo.walk((this.localMoveDirection!= Vector3.zero));
 			this.chivo.setDirection(localMoveDirection);
 		}
 		if (this.human) {
+			this.human.walk((this.localMoveDirection== Vector3.zero));
 			this.human.setDirection(localMoveDirection);
 		}
 
