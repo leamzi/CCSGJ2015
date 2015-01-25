@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: c49d718418c5cc0488d08046a2a87c93
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Hero_Backpack
+    100004: Hero_Chest
+    100006: Hero_Head
+    100008: Hero_Head_end
+    100010: Hero_Hips
+    100012: Hero_LeftArm
+    100014: Hero_LeftArm_end
+    100016: Hero_LeftUpperLeg
+    100018: Hero_Reference
+    100020: Hero_RightArm
+    100022: Hero_RightArm_end
+    100024: Hero_RightUpperLeg
+    100026: Hero_Spine
+    100028: heroe_mesh
+    100030: joint10
+    100032: joint6
+    100034: joint8
+    100036: joint8 1
+    100038: joint9
+    400000: //RootNode
+    400002: Hero_Backpack
+    400004: Hero_Chest
+    400006: Hero_Head
+    400008: Hero_Head_end
+    400010: Hero_Hips
+    400012: Hero_LeftArm
+    400014: Hero_LeftArm_end
+    400016: Hero_LeftUpperLeg
+    400018: Hero_Reference
+    400020: Hero_RightArm
+    400022: Hero_RightArm_end
+    400024: Hero_RightUpperLeg
+    400026: Hero_Spine
+    400028: heroe_mesh
+    400030: joint10
+    400032: joint6
+    400034: joint8
+    400036: joint8 1
+    400038: joint9
+    4300000: heroe_mesh
+    7400000: walk
+    9500000: //RootNode
+    13700000: heroe_mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hero_Reference
+        weight: 1
+      - path: Hero_Reference/Hero_Hips
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_LeftUpperLeg
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_LeftUpperLeg/joint8
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_RightUpperLeg
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_RightUpperLeg/joint8 1
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_Spine
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_Spine/Hero_Chest
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_Spine/Hero_Chest/Hero_Backpack
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_Spine/Hero_Chest/Hero_Backpack/joint6
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_Spine/Hero_Chest/Hero_Head
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_Spine/Hero_Chest/Hero_Head/Hero_Head_end
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_Spine/Hero_Chest/Hero_Head/joint9
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_Spine/Hero_Chest/Hero_Head/joint9/joint10
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_Spine/Hero_Chest/Hero_LeftArm
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_Spine/Hero_Chest/Hero_LeftArm/Hero_LeftArm_end
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_Spine/Hero_Chest/Hero_RightArm
+        weight: 1
+      - path: Hero_Reference/Hero_Hips/Hero_Spine/Hero_Chest/Hero_RightArm/Hero_RightArm_end
+        weight: 1
+      - path: heroe_mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 6ba1ec3a81dfc4a4e987638820ad02aa,
+    type: 3}
+  animationType: 2
+  additionalBone: 0
+  userData: 
