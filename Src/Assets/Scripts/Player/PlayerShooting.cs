@@ -6,7 +6,8 @@ public class PlayerShooting : MonoBehaviour {
 	public int damagePerShot = 100;                  // The damage inflicted by each bullet.
 	public float timeBetweenBullets = 0.15f;        // The time between each shot.
 	public float range = 100f;                      // The distance the gun can fire.
-	
+	public Transform gunman;
+
 	float timer;                                    // A timer to determine when to fire.
 	Ray shootRay;                                   // A ray from the gun end forwards.
 	RaycastHit shootHit;                            // A raycast hit to get information about what was hit.
@@ -85,13 +86,13 @@ public class PlayerShooting : MonoBehaviour {
 
 		if( h >0)
 		{
-			shootRay.direction = transform.right;
+			shootRay.direction = transform.right; goRight();
 		} else if ( h < 0 ){
-			shootRay.direction = -transform.right;
+			shootRay.direction = -transform.right; goLeft();
 		} else if ( v > 0 ){
-			shootRay.direction = transform.forward;
+			shootRay.direction = transform.forward; goUp();
 		} else if ( v < 0 ){
-			shootRay.direction = -transform.forward;
+			shootRay.direction = -transform.forward; goDown();
 		}
 
 //		if( h == 0 && v == 0) shootRay.direction = transform.forward;
@@ -119,5 +120,21 @@ public class PlayerShooting : MonoBehaviour {
 			// ... set the second position of the line renderer to the fullest extent of the gun's range.
 			gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
 		}
+	}
+
+	public void goRight() {
+		if (gunman) gunman.forward=  Vector3.right;
+	}
+	
+	public void goLeft() {
+		if (gunman) gunman.forward= -Vector3.right;
+	}
+	
+	public void goUp() {
+		if (gunman) gunman.forward= -Vector3.back;
+	}
+	
+	public void goDown() {
+		if (gunman) gunman.forward= Vector3.back;
 	}
 }
