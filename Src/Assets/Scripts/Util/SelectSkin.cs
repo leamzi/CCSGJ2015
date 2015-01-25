@@ -31,12 +31,20 @@ public class SelectSkin : MonoBehaviour {
 			currentImage.sprite = skinsSprites[i];
 			canChange = false;
 
+			skinAudio.Stop();
+			skinAudio.clip = soundClip[i];
+			skinAudio.Play ();
+
 		} else if (h < 0 &&  i >= 1 && canChange)
 		{
 			i--;
 			Debug.Log("Cambio de imagen Izquierda");
 			currentImage.sprite = skinsSprites[i];
+
 			canChange = false;
+			skinAudio.Stop();
+			skinAudio.clip = soundClip[i];
+			skinAudio.Play ();
 		}
 
 		if (h == 0) 
@@ -56,18 +64,12 @@ public class SelectSkin : MonoBehaviour {
 				PlayerPrefs.SetString("Skin_name", Selected_Skin);
 				Debug.Log("Skin es: "+Selected_Skin);
 				
-				skinAudio.Stop();
-				skinAudio.clip = soundClip[0];
-				skinAudio.Play ();
 				break;
 			case 2:
 				Selected_Skin = "Skin_ChivoYRobin";
 				PlayerPrefs.SetString("Skin_name", Selected_Skin);
 				Debug.Log("Skin es: "+Selected_Skin);
-				
-				skinAudio.Stop();
-				skinAudio.clip = soundClip[1];
-				skinAudio.Play ();
+
 				break;
 			case 3:
 				Selected_Skin = "Skin_Chivochu";
