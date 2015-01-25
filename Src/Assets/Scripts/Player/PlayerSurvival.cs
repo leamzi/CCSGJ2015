@@ -8,6 +8,7 @@ public class PlayerSurvival : MonoBehaviour {
 	public CharacterController control;
 	public ChivoHumanController chivo;
 	Vector3 movement;
+	bool 	dead;
 //	Animator anim;
 	Rigidbody playerRigidbody;
 //	int floorMask;
@@ -34,21 +35,25 @@ public class PlayerSurvival : MonoBehaviour {
 	{
 		movement.Set (h, 0f, v);
 		movement = movement.normalized * speed * Time.deltaTime;
+		if (this.dead) movement= Vector3.zero;
 
 		if (this.chivo) {
 			this.chivo.walk((movement!= Vector3.zero));
 			this.chivo.setDirection(movement);
 		}
 
+
 		control.Move(movement);
 	}
 
 	public void kill() {
-		Debug.Log("Dead");
+		if (this.dead) return;
+		this.dead= true;
+		Debug.Log("Deaaaaaad");
+		Invoke("RestartScene",2);
 	}
 
 	void RestartScene() {
-		Invoke("RestartScene",2);
 		if (this.chivo) this.chivo.die();
 		Application.LoadLevel(Application.loadedLevel);
 	}
