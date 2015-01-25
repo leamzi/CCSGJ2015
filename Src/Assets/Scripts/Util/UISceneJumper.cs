@@ -26,7 +26,7 @@ public class UISceneJumper : MonoBehaviour {
 		if (this.homeScene) {
 			if(Input.GetButtonDown("btn_a_01")) GoStart();
 		} else {
-			if(Input.anyKeyDown) GoHome();
+			if(Input.GetButtonDown("btn_b_01")) GoHome();
 		}
 	}
 

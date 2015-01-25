@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ChivoController : MonoBehaviour {
+public class ChivoHumanController : MonoBehaviour {
 
 	public Animator anim;
 	public AudioSource source;

@@ -62,7 +62,7 @@ public class SelectSkin : MonoBehaviour {
 
 		if( Input.GetButtonDown("btn_a_01") )
 		{
-			Application.LoadLevel(2);
+			Application.LoadLevel("Scene_Wind");
 		}
 	}
 }
