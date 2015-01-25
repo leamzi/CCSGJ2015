@@ -6,6 +6,7 @@ public class PlayerSurvival : MonoBehaviour {
 	public float speed = 6f;
 
 	public CharacterController control;
+	public ChivoHumanController chivo;
 	Vector3 movement;
 //	Animator anim;
 	Rigidbody playerRigidbody;
@@ -33,13 +34,17 @@ public class PlayerSurvival : MonoBehaviour {
 	{
 		movement.Set (h, 0f, v);
 		movement = movement.normalized * speed * Time.deltaTime;
-		
-		//playerRigidbody.MovePosition (transform.position + movement);
+
+		if (this.chivo) {
+			this.chivo.walk((movement!= Vector3.zero));
+			this.chivo.setDirection(movement);
+		}
+
 		control.Move(movement);
 	}
 
 	public void kill() {
-		print("Dead");
+		Debug.Log("Dead");
 	}
 	
 	void Turning()
