@@ -67,10 +67,6 @@ public class ChivoController : MonoBehaviour {
 		if (direction.z== -1) this.goDown();
 	}
 
-	public void setPikachu() {
-		this.render.sharedMaterial = this.ownMaterials[1];
-	}
-
 	public void setSkinIndex(int i) {
 		this.render.sharedMaterial = this.ownMaterials[i];
 	}
