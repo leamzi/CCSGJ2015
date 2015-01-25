@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class HumanController : MonoBehaviour {
 	
@@ -7,6 +8,9 @@ public class HumanController : MonoBehaviour {
 	public AudioSource source;
 	public AudioClip step;
 	public AudioClip death;
+
+	public Renderer render;
+	public List<Material> materials;
 
 	// Use this for initialization
 	void Start () {
