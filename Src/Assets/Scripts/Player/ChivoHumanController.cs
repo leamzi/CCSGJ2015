@@ -63,10 +63,10 @@ public class ChivoHumanController : MonoBehaviour {
 	}
 	
 	public void setDirection(Vector3 direction) {
-		if (direction.x==  1) {this.goRight();}
-		if (direction.x== -1) {this.goLeft();}
-		if (direction.z==  1) {this.goUp();}
-		if (direction.z== -1) {this.goDown();}
+		if (direction.x>  0) {this.goRight();}
+		if (direction.x<  0) {this.goLeft();}
+		if (direction.z>  0) {this.goUp();}
+		if (direction.z<  0) {this.goDown();}
 	}
 
 	public void setChivoSkinIndex(int i) {
