@@ -45,7 +45,8 @@ public class ChivoHumanController : MonoBehaviour {
 	}
 	
 	public void die() {
-		if(this.anim) this.anim.SetTrigger("dead");
+		//if(this.anim) this.anim.SetTrigger("dead");
+		// No dead animation, we need to spawn both goa and rider as dead
 	}
 	
 	public void walk(bool moving) {

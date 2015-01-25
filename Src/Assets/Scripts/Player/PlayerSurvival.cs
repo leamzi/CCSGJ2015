@@ -46,6 +46,13 @@ public class PlayerSurvival : MonoBehaviour {
 	public void kill() {
 		Debug.Log("Dead");
 	}
+
+	void RestartScene() {
+		Invoke("RestartScene",2);
+		if (this.chivo) this.chivo.die();
+		Application.LoadLevel(Application.loadedLevel);
+	}
+
 	
 	void Turning()
 	{
