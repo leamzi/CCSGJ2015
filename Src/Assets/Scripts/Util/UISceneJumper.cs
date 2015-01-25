@@ -24,9 +24,9 @@ public class UISceneJumper : MonoBehaviour {
 	public void GetUIKeyBoard() {
 		// only in home button
 		if (this.homeScene) {
-			if(Input.GetButtonDown("btn_a_01")) GoStart();
+			if(Input.GetButtonDown("btn_a_01") || Input.GetButtonDown("btn_a_02")) GoStart();
 		} else {
-			if(Input.GetButtonDown("btn_b_01")) GoHome();
+			if(Input.GetButtonDown("btn_b_01") || Input.GetButtonDown("btn_b_02")) GoHome();
 		}
 	}
 

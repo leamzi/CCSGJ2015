@@ -27,8 +27,9 @@ public class SelectSkin : MonoBehaviour {
 	void Update()
 	{
 		float h = Input.GetAxisRaw ("Horizontal_01");
+		float h1 = Input.GetAxisRaw ("Horizontal_02");
 
-		if( h > 0 &&  i < (skinsSprites.Count - 1) && canChange)
+		if( (h > 0 || h1 > 0 )&&  i < (skinsSprites.Count - 1) && canChange)
 		{
 			i++;
 			Debug.Log("Cambio de imagen Derecha");
@@ -39,7 +40,7 @@ public class SelectSkin : MonoBehaviour {
 			skinAudio.clip = soundClip[i];
 			skinAudio.Play ();
 
-		} else if (h < 0 &&  i >= 1 && canChange)
+		} else if ((h < 0 || h1 < 0) &&  i >= 1 && canChange)
 		{
 			i--;
 			Debug.Log("Cambio de imagen Izquierda");
@@ -51,7 +52,7 @@ public class SelectSkin : MonoBehaviour {
 			skinAudio.Play ();
 		}
 
-		if (h == 0) 
+		if (h == 0 && h1 == 0) 
 		{
 			canChange = true;
 		}
@@ -82,7 +83,7 @@ public class SelectSkin : MonoBehaviour {
 				break;
 		}
 
-		if( Input.GetButtonDown("btn_a_01") )
+		if( Input.GetButtonDown("btn_a_01") || Input.GetButtonDown("btn_a_02"))
 		{
 			Application.LoadLevel("Scene_Wind");
 		}
