@@ -38,7 +38,7 @@ public class EnemiesKilled : MonoBehaviour {
 		if (enemiesKilled >= totalLevelEnemies ) 
 		{
 
-			levelDoor.transform.position = new Vector3(46.82f, 1.92f, 12.9f);
+			levelDoor.transform.position = new Vector3(46.82f, 3.49f, 12.9f);
 			Debug.Log("Puerta Sale: "+levelDoor.transform.position.z);
 			Messenger<int>.Broadcast("levelCompleted", 0);
 		}
