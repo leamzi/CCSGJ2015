@@ -31,4 +31,19 @@ public class Wind : MonoBehaviour {
 	void ThrowWind() {
 		Messenger<Vector3>.Broadcast("Wind", windDirection);
 	}
+
+	void OnEnable()
+	{
+		Messenger<Vector3>.AddListener("Wind", ApplyWind);
+	}
+	
+	void OnDisable()
+	{
+		Messenger<Vector3>.RemoveListener("Wind", ApplyWind);
+	}
+	
+	void ApplyWind(Vector3 windDirection)
+	{
+		;
+	}
 }
